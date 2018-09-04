@@ -44,7 +44,7 @@ def insert_time():
 
 
 box = Tk()
-box.title("V S T calculator")
+box.title("V s T calculator")
 
 # speed label and input box
 speedlabel1 = Label(box, text="speed")
