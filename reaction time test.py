@@ -8,16 +8,17 @@ def wait():
 	time.sleep(waittime)
 	return None
 
+# Compare result and return string with comment for every range of numbers
 def compare(result):
 	if result > 500:
 		return 'It is really slow!'
-	if result > 320:
+	elif result > 320:
 		return 'It is not that bad.'
-	if result > 250:
+	elif result > 250:
 		return 'It is pretty good.'
-	if result > 0:
+	elif result > 0:
 		return 'It is great!'
-	if result == 0:
+	elif result == 0:
 		return 'Cheater! Too early!'
 	return None
 
