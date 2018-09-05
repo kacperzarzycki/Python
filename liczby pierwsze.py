@@ -1,6 +1,6 @@
 while True:
 	try:
-		x = int(input('liczby pierwsze w przedziale od 0 do: '))
+		x = int(input('Prime numbers from 0 to: '))
 		if x > 1:
 			print(2)
 		for number in range(x+1):
@@ -10,4 +10,4 @@ while True:
 				if number % divider !=0 and divider==number-1:
 					print(number)
 	except:
-		print('Proszę podać liczbę rzeczywistą')
+		print('Please insert an integer number')
