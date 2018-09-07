@@ -12,7 +12,13 @@ def count_army(eqlist):
 	civilamount = eqlist.count('civil')
 	policeamount = eqlist.count('police')
 	thugamount = eqlist.count('thug')
-	return str('civil[{}]   police[{}]   thug[{}]'.format(civilamount, policeamount, thugamount))
+	if lvl < 101:
+		return str('civil[{}]   police[{}]   thug[{}]'.format(civilamount, policeamount, thugamount))
+	soldieramount = eqlist.count('soldier')
+	tankamount = eqlist.count('tank')
+	chuckamount = eqlist.count('chuck')
+	return str('civil[{}]   police[{}]   thug[{}]	soldier[{}]    tank[{}]    chuck[{}]'.format(civilamount, policeamount, thugamount, soldieramount, tankamount, chuckamount))
+	
 
 money = 0
 lvl = 1
@@ -21,6 +27,8 @@ eqtobuy = ['civil     50$      +2$', 'police    150$     +5$', 'thug      400$  
 income = 1
 
 while True:
+	if lvl > 100:
+		eqtobuy = ['soldier     7k$      +60$', 'tank    35k$     +170$', 'chuck      200k$     +800$']
 	army = count_army(eqlist)
 	print_info(money, lvl, army, eqtobuy)
 	choice = input()
@@ -40,26 +48,21 @@ while True:
 		income += 20
 		money -= 400
 		lvl += 8
+	elif choice == 'soldier' and money > 6999:
+		eqlist += ['soldier']
+		income += 60
+		money -= 7000
+		lvl += 20
+	elif choice == 'tank' and money > 34999:
+		eqlist += ['tank']
+		income += 170
+		money -= 35000
+		lvl += 60
+	elif choice == 'chuck' and money > 199999:
+		eqlist += ['chuck']
+		income += 800
+		money -= 200000
+		lvl += 140
 	# If player won't pick new eq, he gets money
 	else:
 		money += income
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
