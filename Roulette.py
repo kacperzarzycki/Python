@@ -38,7 +38,7 @@ while True:
 	
 	print("Obstawiasz {}zł na kolor {}".format(bet, picked_colour)) 
 	while cash > 0:
-		#input()	# Uncomment that line if you want to click enter every tour
+		input()	# Uncomment that line if you want to click enter every tour
 		colour = get_colour()
 		#If player will win: change colour, get price (bet amount), set bet to 2
 		if colour == picked_colour:
