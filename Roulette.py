@@ -1,10 +1,10 @@
 import random
 
-# Roulettes "Big Number" strategy say's:
-# Bet 2$ on colour (for first spin it can be black or red)
+# Programme tests roulettes "Big Number" strategy which says:
+# Bet 2$ on colour (for the first spin it can be black or red)
 # Spin the wheel
-# If win - change colour to the opposite and bet 2$ on it
-# If lost - don't change colour, multiply bet by 2.
+# You win - change colour to the opposite and bet 2$ on it
+# You lost - don't change colour, multiply bet by 2.
 # You will never loose (until you have enough cash)
 
 
@@ -20,16 +20,18 @@ def get_colour():
 		colournum = 3
 	colours = {1: 'Red', 2: 'Black', 3: 'Green'}
 	return colours[colournum]
-	
-	
-while True:
-	# Get amount of cash for start. If input is incorrect cash = 100.
+
+# Return amount of cash for start. If input is incorrect cash = 100.
+def get_cash():
 	try:
-		cash = int(input("Ile pieniędzy na start?"))
+		amount = int(input("Ile pieniędzy na start?"))
 	except:
 		print("100zł")
-		cash = 100
-		
+		amount = 100
+	return amount
+	
+while True:
+	cash = get_cash()	
 	# games - games played, sum of all rounds
 	# tour - sum of all lost rounds. Resets when player will win
 	games, tour, picked_colour, bet = 0, 1, 'Red', 2
