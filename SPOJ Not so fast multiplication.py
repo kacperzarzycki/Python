@@ -1,4 +1,5 @@
 import re
+# Solution for https://pl.spoj.com/problems/TMUL/
 
 try:
 	while True:
