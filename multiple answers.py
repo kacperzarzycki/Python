@@ -5,7 +5,7 @@ def get_answer():
 	elif answer in ('n', 'no', 'No'):
 		return "Oh god! Why?!"
 	else:
-		print("I don't know that answer")
+		return "I don't know that answer"
 		
 while True:
 	print(get_answer(), '\n')
